@@ -6,10 +6,10 @@ const PORT = process.env.PORT || 3000;
 const connectMongoDB = require('./db/mongodb')
 const routes = require('./routes/routes');
 
+app.use(express.json());
 connectMongoDB();
 
 app.use('/api', routes)
-app.use(express.json());
 
 
 app.listen(PORT, () => {
